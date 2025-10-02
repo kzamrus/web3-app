@@ -1,0 +1,42 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "pipeline": {
+    "build": {
+      "cache": true,
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", "build/**"]
+    },
+    "build:stage": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", "build/**"]
+    },
+    "build:testnet": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", "build/**"]
+    },
+    "build:prod": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", "build/**"]
+    },
+    "test": {
+      "dependsOn": ["^build"],
+      "outputs": ["coverage/**"]
+    },
+    "lint": {
+      "outputs": []
+    },
+    "start:stage": {
+      "cache": false,
+      "dependsOn": ["^build"]
+    },
+    "start:testnet": {
+      "cache": false,
+      "dependsOn": ["^build"]
+    },
+    "start:prod": {
+      "cache": false,
+      "dependsOn": ["^build"]
+    }
+  },
+  "globalEnv": ["VITE_ENV"]
+}

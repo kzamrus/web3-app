@@ -1,0 +1,23 @@
+{
+  "name": "lombard",
+  "version": "0.0.1",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build:dev": "turbo run build:dev",
+    "build:stage": "turbo run build:stage",
+    "build:prod": "turbo run build:prod"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5",
+    "turbo": "^1.13.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {},
+  "packageManager": "yarn@1.22.17"
+}

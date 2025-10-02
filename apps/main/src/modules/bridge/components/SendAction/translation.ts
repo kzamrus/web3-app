@@ -1,0 +1,10 @@
+import { Locale } from 'modules/i18n';
+
+export const translation = {
+  [Locale.en]: {
+    connect: 'Connect Wallet',
+    approve: 'Approve',
+    send: 'Send',
+    switchChain: 'Switch Network',
+  },
+};

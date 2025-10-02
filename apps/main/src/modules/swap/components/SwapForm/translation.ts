@@ -1,0 +1,32 @@
+import { Locale } from 'modules/i18n';
+
+export const translation = {
+  [Locale.en]: {
+    swapTitle: 'Swap',
+    sendLabel: 'You send',
+    receiveLabel: 'You receive',
+    usd: '${usd}',
+    balance: 'Balance: {balance}',
+    maxBtn: 'MAX',
+    approaching: '(~${usd})',
+    gas: 'Gas: ~${usd}',
+    swap: 'Swap',
+    slippage: 'Slippage tolerance',
+    slippageOutput: '{percent}%',
+    auto: '{percent}% Auto',
+    miniReceive: 'Minimum receive',
+    miniReceiveOutput: '{amount} {token}(~${usd})',
+    netFee: 'Network Fee',
+    netFeeOutput: '~${usd}',
+    amountRequired: 'Please input amount',
+    amountInsufficient: 'Insufficient funds',
+    amountTooSmall: 'Amount is too small, at least {min}',
+    unitPrice: '1 {fromToken}={toAmount} {toToken}',
+    selectToken: 'Select a token',
+    inputPlaceholder: 'Search by name or paste address',
+    insufficientFunds: 'Insufficient Funds',
+    approve: 'Approve',
+    invalidChain: 'Switch network to Ethereum Mainnet',
+    connect: 'Connect Wallet',
+  },
+};

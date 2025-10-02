@@ -1,0 +1,21 @@
+[
+  {
+    "decimals": 18,
+    "symbol": "ETH",
+    "tags": ["native", "PEG:ETH"],
+    "address": "0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+    "name": "Ether",
+    "logoURI": "https://tokens.1inch.io/0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee.png",
+    "eip2612": false,
+    "isFoT": false,
+    "isCustom": false,
+    "wallets": {
+      "0x2c3FeCd23f19876940aDDbaf4442958200b5E68c": {
+        "balance": "37615726367489548",
+        "allowance": "115792089237316195423570985008687907853269984665640564039457584007913129639935"
+      }
+    },
+    "type": "ethereum",
+    "tracked": true
+  }
+]

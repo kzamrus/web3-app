@@ -1,0 +1,9 @@
+export const getSentioHoldTimeSql = (address: string) =>
+  // `WITH user_full_history AS (SELECT timestamp, toDecimal256(newLbtcBalance / pow(10, 8), 12) AS balance, newTimestampMilli, contract FROM point_update WHERE account = '${address}' UNION ALL SELECT timestamp, toDecimal256(newLbtcBalance, 12) AS balance, newTimestampMilli, contract FROM uniswapv3_ethereum.point_update WHERE account = '${address}'), hourly_aggregated_balance AS (SELECT hour, sum(max_balance) AS holding_balance FROM (SELECT toStartOfHour(timestamp) AS hour, contract, argMax(balance, timestamp) AS max_balance FROM user_full_history GROUP BY hour, contract ORDER BY hour DESC) t1 GROUP BY hour ORDER BY hour DESC), lastPositiveBalance AS (SELECT hour, holding_balance FROM hourly_aggregated_balance WHERE holding_balance >= 0.0001 ORDER BY hour DESC LIMIT 1), lastNegativeBalance AS (SELECT hour, holding_balance FROM hourly_aggregated_balance WHERE holding_balance < 0.001 ORDER BY hour DESC LIMIT 1) SELECT * FROM (SELECT '''Last time with balance >= threshold''' AS description, hour AS hour_time, holding_balance FROM lastPositiveBalance UNION ALL SELECT '''Last time with balance < threshold''' AS description, hour AS hour_time, holding_balance FROM lastNegativeBalance UNION ALL SELECT '''Max Timestamp''' AS description, argMax(hour, hour) AS hour_time, argMax(holding_balance, hour) AS holding_balance FROM hourly_aggregated_balance UNION ALL SELECT '''Min Timestamp''' AS description, argMin(hour, hour) AS hour_time, argMin(holding_balance, hour) AS holding_balance FROM hourly_aggregated_balance) AS t`;
+  `select * from lombard_holdings_mv where account = '${address}'`;
+
+export const getAvgHoldingTimeSql = () =>
+  `select * from lombard_holdings_mv where account = 'avg'`;
+
+export const getSentioLombaPointsSql = (address: string) =>
+  `select * from lombard_points_mv WHERE lower(account) = lower('${address}')`;
